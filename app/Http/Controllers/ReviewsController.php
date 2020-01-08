@@ -101,7 +101,7 @@ class ReviewsController extends Controller
     {
         //
         $review->title = $request->title;
-        $review->username = $request->username;
+        $review->product_id = $request->product_id;
         $review->body = $request->body;
         $review->rating = $request->rating;
         //save review in database (execute update)

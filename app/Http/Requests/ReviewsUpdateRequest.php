@@ -25,10 +25,10 @@ class ReviewsUpdateRequest extends FormRequest
     {
         $review = $this->route('review');
         return [
-            'title' => 'required|max:10',
-            'username' => 'required|unique:reviews,title, '.$review->id,
+            'title' => 'required|max:250|unique:reviews,title, '.$review->id,
+            'product_id' => 'required|exists:products,id',
             'body' => 'required',
-            'rating' => 'required|numeric'
+            'rating' => 'required|integer|between:1,10'
         ];
     }
 }
