@@ -87,7 +87,7 @@ class ReviewsController extends Controller
     public function edit(Review $review)
     {
         $products = Product::all();
-        return view('reviews.edit', compact('review'));
+        return view('reviews.edit', compact('review', 'products'));
     }
 
     /**
