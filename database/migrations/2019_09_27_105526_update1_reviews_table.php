@@ -25,8 +25,8 @@ class Update1ReviewsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
             ->references('id')->on('products')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
